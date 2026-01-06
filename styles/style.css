@@ -1,16 +1,10 @@
-html {
-  block-size: 100%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.page {
-  display: flex;
-  align-items: center;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  background-color: #1b1919;
-  inline-size: 1200px;
+html {
   block-size: 100%;
 }
 
@@ -37,6 +31,8 @@ video {
   width: 100%;
 }
 
+/* Utility classes */
+
 .visually-hidden {
   position: absolute;
   overflow: hidden;
@@ -45,6 +41,20 @@ video {
   block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+/* Styles */
+
+.page {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 .content {
@@ -197,4 +207,93 @@ video {
 
 .content__details {
   inline-size: 100%;
+}
+
+.title {
+  padding: 0 0 26px;
+  color: #FFF;
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 70.5px;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+/* scrollbar-width removes scrollbar, but only works in Firefox */
+/* https://caniuse.com/?search=scrollbar-width */
+.content__list {
+  position: relative;
+  overflow-y: scroll;
+  block-size: 298px;
+  scrollbar-width: none;
+}
+
+/* Removes scrollbar for most other browsers */
+/* https://caniuse.com/?search=webkit-scrollbar */
+.content__list::-webkit-scrollbar {
+  display: none;
+}
+
+.content__list-item:not(:last-child) {
+  margin: 0 0 34px;
+}
+
+.content__card-link {
+  display: block;
+  margin: 2px;
+  text-decoration: none;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline 1px #FFF;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #FFF;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__video-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__video-card-title {
+  padding: 2px 2px 5px;
+  color: #FFF;
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  hyphens: auto;
+}
+
+.content__video-card-description {
+  padding: 0 2px;
+  color: #FFF;
+  font-weight: 400;
+  line-height: 16.2px;
+}
+
+.content__video-card-thumbnail {
+  inline-size: 194px;
+  block-size: 103px;
+  object-fit: cover;
+  object-position: center;
 }
